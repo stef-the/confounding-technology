@@ -34,7 +34,14 @@
 	];
 </script>
 
-<title>Confounding Technologies</title>
+<svelte:head>
+	<title>Confounding Technologies</title>
+	<meta name="author" content="stef#6470" />
+	<meta
+		name="description"
+		content="The Confounding Technologies homepage.\nPerplexing or Bewildering."
+	/>
+</svelte:head>
 
 <div class="bg-gradient-to-b from-gray-900 to-zinc-900 h-screen grid place-content-center">
 	<b>
