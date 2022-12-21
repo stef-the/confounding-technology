@@ -62,7 +62,7 @@
 						id="dropdownMenuButton"
 						on:click={() => {
 							if (current === '') {
-								current = `dropdown-${definition[0]}`;
+								current = `dropdown-${definition[0][1]}`;
 							} else {
 								current = '';
 							}
@@ -90,7 +90,7 @@
 	</section>
 	<section class="p-8">
 		<div class="flex flex-row">
-			<div class="bg-gray-100 w-3 h-10" />
+			<div class="bg-gray-100 w-2 h-10" />
 			<div class="pl-4">
 				<h3 class="text-2xl pb-4 underline decoration-pink-500">
 					Hello! My name is Stefan, and I like to program.
