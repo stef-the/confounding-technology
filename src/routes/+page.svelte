@@ -1,6 +1,8 @@
 <script>
 	import { each } from 'svelte/internal';
 
+	let current = '';
+
 	const space = ' ';
 	const definitions = [
 		[
@@ -32,6 +34,8 @@
 	];
 </script>
 
+<title>Confounding Technologies</title>
+
 <div class="bg-gradient-to-b from-gray-900 to-zinc-900 h-screen grid place-content-center">
 	<b>
 		<h1 class="text-4xl underline-offset-2 p-8">
@@ -42,20 +46,40 @@
 </div>
 <div class="content">
 	<section class="p-8">
+        <h2 class="text-3xl">But what does <b class="underline decoration-pink-500">Confounding</b> mean?</h2>
 		{#each definitions as definition}
 			<div class="flex flex-row">
-				<div class="bg-gray-100 w-2 h-24 mt-4" />
+				<div
+					class="bg-gray-100 w-2 h-10 mt-4 
+                        {current === `dropdown-${definition[0]}` ? 'bg-sky-500' : ''}"
+				/>
 				<div class="pl-4">
-					<br /><b
-						><h3 class="leading-4 text-2xl pb-4 underline decoration-sky-500">
-							{definition[0]}
-						</h3></b
+					<button
+						class="dropdown-button"
+						type="button"
+						id="dropdownMenuButton"
+						on:click={() => {
+							if (current === '') {
+								current = `dropdown-${definition[0]}`;
+							} else {
+								current = '';
+							}
+						}}
+						><br /><b class="title-{definition[0]}"
+							><h3 class="leading-4 text-2xl pb-4 underline decoration-sky-500">
+								{definition[0]}
+							</h3></b
+						></button
 					>
-					<ul class="pl-4">
+					<ul
+						id="dropdown-{definition[0]}"
+						class="pl-4 dropdown-menu {current === `dropdown-${definition[0]}` ? '' : 'hidden'}"
+					>
 						{#each definition.slice(1) as cat}
-							<li>{cat[0]}<br />
-                                <div class="pl-6"><i>{cat[1]}</i><br /><br /></div>
-                            </li>
+							<li>
+								{cat[0]}<br />
+								<div class="pl-6"><i>{cat[1]}</i><br /><br /></div>
+							</li>
 						{/each}
 					</ul>
 				</div>
