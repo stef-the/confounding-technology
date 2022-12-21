@@ -6,7 +6,7 @@
 	const space = ' ';
 	const definitions = [
 		[
-			'Adjective',
+			['As an', 'Adjective'],
 			[
 				'Perplexing or Bewildering',
 				"He's hosting an evening of readings from some of the most sensational and confounding cases of Sherlock Holmes."
@@ -21,7 +21,7 @@
 			]
 		],
 		[
-			'Verb',
+			['As a', 'Verb'],
 			[
 				'The act of perplexing, bewildering, causing confusion or disorder, etc.',
 				'The Jaredite civilization is supposed to have formed in the wake of the miraculous confounding of languages at the Tower of Babel.'
@@ -46,12 +46,14 @@
 </div>
 <div class="content">
 	<section class="p-8">
-        <h2 class="text-3xl">But what does <b class="underline decoration-pink-500">Confounding</b> mean?</h2>
+		<h2 class="text-3xl">
+			But what does <b class="underline decoration-pink-500">Confounding</b> mean?
+		</h2>
 		{#each definitions as definition}
 			<div class="flex flex-row">
 				<div
 					class="bg-gray-100 w-2 h-10 mt-4 
-                        {current === `dropdown-${definition[0]}` ? 'bg-sky-500' : ''}"
+                        {current === `dropdown-${definition[0][1]}` ? 'bg-sky-500' : ''}"
 				/>
 				<div class="pl-4">
 					<button
@@ -65,15 +67,15 @@
 								current = '';
 							}
 						}}
-						><br /><b class="title-{definition[0]}"
-							><h3 class="leading-4 text-2xl pb-4 underline decoration-sky-500">
-								{definition[0]}
-							</h3></b
-						></button
-					>
+						><br />
+						<h3 class="leading-4 text-2xl pb-4">
+							{definition[0][0]}{space}<b class="underline decoration-sky-500">{definition[0][1]}</b
+							>
+						</h3>
+					</button>
 					<ul
-						id="dropdown-{definition[0]}"
-						class="pl-4 dropdown-menu {current === `dropdown-${definition[0]}` ? '' : 'hidden'}"
+						id="dropdown-{definition[0][1]}"
+						class="pl-4 dropdown-menu {current === `dropdown-${definition[0][1]}` ? '' : 'hidden'}"
 					>
 						{#each definition.slice(1) as cat}
 							<li>
