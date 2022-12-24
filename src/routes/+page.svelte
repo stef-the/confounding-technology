@@ -39,7 +39,7 @@
 	<meta name="author" content="stef#6470" />
 	<meta
 		name="description"
-		content="The Confounding Technologies homepage.<br>Perplexing or Bewildering."
+		content="The Confounding Technologies homepage. Perplexing or Bewildering."
 	/>
 </svelte:head>
 
