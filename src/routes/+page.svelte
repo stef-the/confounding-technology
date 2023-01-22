@@ -74,7 +74,7 @@
 	<meta name="author" content="stef#6470" />
 	<meta
 		name="description"
-		content="The Confounding Technologies homepage. Perplexing or Bewildering."
+		content="The Confounding Technologies homepage. Confounding is a synonym for Perplexing or Bewildering."
 	/>
 </svelte:head>
 
