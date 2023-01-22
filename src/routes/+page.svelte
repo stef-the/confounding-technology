@@ -5,6 +5,13 @@
 	let currenthover0 = '';
 
 	const space = ' ';
+
+	const pallette = [
+		'sky-500',
+		'pink-500',
+		'indigo-500',
+	];
+
 	const definitions = [
 		[
 			['As an', 'Adjective'],
@@ -48,12 +55,19 @@
 			image: 'ascella.png'
 		},
 		{
+			title: 'CIT Generator v3',
+			description:
+				'The third generation of a 1.8.9 Optifine CIT generation tool for Hypixel Skyblock, using Moulberry\'s item repository.',
+			url: 'https://cit-generator-v3.vercel.app/',
+			image: 'citgenv3.png'
+		},
+		{
 			title: 'Blank (example)',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 			url: 'https://theuselessweb.com/',
 			image: 'google.png'
-		}
+		},
 	];
 </script>
 
@@ -75,6 +89,24 @@
 	</b>
 </div>
 <div class="content">
+	<section class="p-8">
+		<div class="flex flex-row">
+			<div class="bg-none w-2 h-10 transition-all rounded" id="who" />
+			<div
+				class="pl-4 cursor-pointer"
+				on:mouseenter={() => {
+					document.getElementById('who')?.classList.add('bg-gray-100');
+				}}
+				on:mouseleave={() => {
+					document.getElementById('who')?.classList.remove('bg-gray-100');
+				}}
+			>
+				<h3 class="text-2xl pb-4">
+					Hello! My name is <b class="underline decoration-pink-500">Stefan</b>, and I like to program.
+				</h3>
+			</div>
+		</div>
+	</section>
 	<section class="p-8">
 		<h2 class="text-3xl cursor-default">
 			But what does <b class="underline decoration-pink-500">Confounding</b> mean?
@@ -132,13 +164,13 @@
 		<div class="flex flex-wrap">
 			{#each portfolioitems as item}
 				<div
-					class="transition-all sm:w-100 md:w-[45%] lg:w-[29%] h-100 bg-zinc-800 rounded-xl mt-8 mr-8 p-5 flex flex-col border-2 border-transparent hover:border-gray-100 "
+					class="transition-all sm:w-100 md:w-[45%] lg:w-[29%] h-100 bg-zinc-800 rounded-xl mt-8 mr-8 p-5 flex flex-col border-2 border-transparent hover:border-gray-100"
 				>
 					<img class="mb-3 rounded" src="img/{item.image}" alt={item.image} />
-					<h3 class="sm:text-2xl underline decoration-pink-500">
+					<h3 class="sm:text-2xl underline decoration-{pallette[Math.floor(Math.random()*pallette.length)]}">
 						<a href={item.url} target="_blank" rel="noreferrer"><b>{item.title}</b></a>
 					</h3>
-					<span>{item.description}</span>
+					<span class="cursor-default">{item.description}</span>
 				</div>
 			{/each}
 		</div>
