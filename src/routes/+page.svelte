@@ -44,28 +44,39 @@
 			title: 'Vine (Service)',
 			description: 'A school project that went a little too far.',
 			url: 'https://vine.stefff.me/',
-			image: 'vine.png'
+			image: 'vine.png',
+			github: 'https://github.com/stef-the/vine-school',
 		},
 		{
 			title: 'Ascella.host',
 			description: 'An incredibly quick image uploader.',
 			url: 'https://Ascella.host/',
-			image: 'ascella.png'
+			image: 'ascella.png',
+			github: 'https://github.com/Tricked-dev/ascella',
 		},
 		{
 			title: 'CIT Generator v3',
 			description:
 				"The third generation of a 1.8.9 Optifine CIT generation tool for Hypixel Skyblock, using Moulberry's item repository.",
 			url: 'https://cit-generator-v3.vercel.app/',
-			image: 'citgenv3.png'
+			image: 'citgenv3.png',
+			github: 'https://github.com/stef-the/CIT-Generator-v3',
 		},
 		{
-			title: 'Blank (example)',
+			title: 'Confounding Technologies',
 			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-			url: 'https://theuselessweb.com/',
-			image: 'google.png'
-		}
+				'You\'re on this site at the moment...',
+			url: 'https://confounding.tech/',
+			image: 'confoundingtech.png',
+			github: 'https://github.com/stef-the/confounding-technology',
+		},
+		{
+			title: 'Ice Core Data Visualiser',
+			description: 'Visualising CO2 trends from before the year 0 using ice core data.',
+			url: 'http://stefff.me/co2-icecore-visualisation/',
+			image: 'icecore.png',
+			github: 'https://github.com/stef-the/co2-icecore-visualisation',
+		},
 	];
 </script>
 
