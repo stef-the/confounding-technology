@@ -1,7 +1,8 @@
 <script>
 	import { each } from 'svelte/internal';
 
-	let current = '';
+	let current0 = '';
+	let currenthover0 = '';
 
 	const space = ' ';
 	const definitions = [
@@ -32,6 +33,28 @@
 			]
 		]
 	];
+
+	const portfolioitems = [
+		{
+			title: 'Vine (Service)',
+			description: 'A school project that went a little too far.',
+			url: 'https://vine.stefff.me/',
+			image: 'vine.png'
+		},
+		{
+			title: 'Ascella.host',
+			description: 'An incredibly quick image uploader.',
+			url: 'https://Ascella.host/',
+			image: 'ascella.png'
+		},
+		{
+			title: 'Blank (example)',
+			description:
+				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+			url: 'https://theuselessweb.com/',
+			image: 'google.png'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -44,7 +67,7 @@
 </svelte:head>
 
 <div class="bg-gradient-to-b from-gray-900 to-zinc-900 h-screen grid place-content-center">
-	<b>
+	<b class="cursor-default">
 		<h1 class="text-4xl underline-offset-2 p-8">
 			Welcome to
 			<p class="underline decoration-sky-500">Confounding Technologies</p>
@@ -53,14 +76,15 @@
 </div>
 <div class="content">
 	<section class="p-8">
-		<h2 class="text-3xl">
+		<h2 class="text-3xl cursor-default">
 			But what does <b class="underline decoration-pink-500">Confounding</b> mean?
 		</h2>
 		{#each definitions as definition}
 			<div class="flex flex-row">
 				<div
-					class="bg-gray-100 w-2 h-10 mt-4 
-                        {current === `dropdown-${definition[0][1]}` ? 'bg-sky-500' : ''}"
+					class=" h-10 mt-4 w-2 transition-all rounded
+                        {current0 === `dropdown-${definition[0][1]}` ? 'bg-sky-500' : ''}
+						{currenthover0 === `dropdown-${definition[0][1]}` ? 'bg-gray-100' : 'bg-none'}"
 				/>
 				<div class="pl-4">
 					<button
@@ -68,11 +92,17 @@
 						type="button"
 						id="dropdownMenuButton"
 						on:click={() => {
-							if (current === '') {
-								current = `dropdown-${definition[0][1]}`;
+							if (current0 === '') {
+								current0 = `dropdown-${definition[0][1]}`;
 							} else {
-								current = '';
+								current0 = '';
 							}
+						}}
+						on:mouseenter={() => {
+							currenthover0 = `dropdown-${definition[0][1]}`;
+						}}
+						on:mouseleave={() => {
+							currenthover0 = ``;
 						}}
 						><br />
 						<h3 class="leading-4 text-2xl pb-4">
@@ -82,11 +112,11 @@
 					</button>
 					<ul
 						id="dropdown-{definition[0][1]}"
-						class="pl-4 dropdown-menu {current === `dropdown-${definition[0][1]}` ? '' : 'hidden'}"
+						class="pl-4 dropdown-menu {current0 === `dropdown-${definition[0][1]}` ? '' : 'hidden'}"
 					>
 						{#each definition.slice(1) as cat}
 							<li>
-								{cat[0]}<br />
+								<b>{cat[0]}</b><br />
 								<div class="pl-6"><i>{cat[1]}</i><br /><br /></div>
 							</li>
 						{/each}
@@ -96,13 +126,21 @@
 		{/each}
 	</section>
 	<section class="p-8">
-		<div class="flex flex-row">
-			<div class="bg-gray-100 w-2 h-10" />
-			<div class="pl-4">
-				<h3 class="text-2xl pb-4 underline decoration-pink-500">
-					Hello! My name is Stefan, and I like to program.
-				</h3>
-			</div>
+		<h2 class="text-3xl cursor-default">
+			Here's my <b class="underline decoration-indigo-500">Portfolio</b>
+		</h2>
+		<div class="flex flex-wrap">
+			{#each portfolioitems as item}
+				<div
+					class="transition-all sm:w-100 md:w-[45%] lg:w-[29%] h-100 bg-zinc-800 rounded-xl mt-8 mr-8 p-5 flex flex-col border-2 border-transparent hover:border-gray-100 "
+				>
+					<img class="mb-3 rounded" src="img/{item.image}" alt={item.image} />
+					<h3 class="sm:text-2xl underline decoration-pink-500">
+						<a href={item.url} target="_blank" rel="noreferrer"><b>{item.title}</b></a>
+					</h3>
+					<span>{item.description}</span>
+				</div>
+			{/each}
 		</div>
 	</section>
 </div>
