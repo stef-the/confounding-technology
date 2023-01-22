@@ -79,14 +79,32 @@
 		}
 	];
 
-	const request = new XMLHttpRequest();
-
-							request.addEventListener("load", function(evt){
-								console.log(evt);
-							}, false);
-							
-							request.open('GET', 'a.html', true),
-							request.send();
+	/**
+	 * @param {string} tag
+	 */
+	async function getData(tag) {
+		await fetch('https://github.com/' + tag, {
+			mode: 'cors',
+			headers: { 'Access-Control-Allow-Origin': '*' }
+		})
+			.then((resp) => {
+				return resp.text().then((data) => {
+					let a, b;
+					a = data.split('relative-time')[1];
+					if (a !== undefined) {
+						b = a.split('>')[1].split('<')[0];
+					} else {
+						b = '';
+					}
+					console.log(b);
+					return b;
+				});
+			})
+			.catch((err) => {
+				console.error(err);
+				return 'error';
+			});
+	}
 </script>
 
 <svelte:head>
@@ -195,7 +213,10 @@
 						>
 							{item.github}
 						</a>
-						• 
+						• {getData(item.github).then((resp) => {
+							console.log(resp);
+							return resp;
+						})}
 					</span>
 				</div>
 			{/each}
