@@ -1,4 +1,5 @@
 <script>
+	import { error } from '@sveltejs/kit';
 	import { each } from 'svelte/internal';
 
 	let current0 = '';
@@ -45,14 +46,14 @@
 			description: 'A school project that went a little too far.',
 			url: 'https://vine.stefff.me/',
 			image: 'vine.png',
-			github: 'https://github.com/stef-the/vine-school',
+			github: 'stef-the/vine-school'
 		},
 		{
 			title: 'Ascella.host',
 			description: 'An incredibly quick image uploader.',
 			url: 'https://Ascella.host/',
 			image: 'ascella.png',
-			github: 'https://github.com/Tricked-dev/ascella',
+			github: 'Tricked-dev/ascella'
 		},
 		{
 			title: 'CIT Generator v3',
@@ -60,24 +61,32 @@
 				"The third generation of a 1.8.9 Optifine CIT generation tool for Hypixel Skyblock, using Moulberry's item repository.",
 			url: 'https://cit-generator-v3.vercel.app/',
 			image: 'citgenv3.png',
-			github: 'https://github.com/stef-the/CIT-Generator-v3',
+			github: 'stef-the/CIT-Generator-v3'
 		},
 		{
 			title: 'Confounding Technologies',
-			description:
-				'You\'re on this site at the moment...',
+			description: "You're on this site at the moment...",
 			url: 'https://confounding.tech/',
 			image: 'confoundingtech.png',
-			github: 'https://github.com/stef-the/confounding-technology',
+			github: 'stef-the/confounding-technology'
 		},
 		{
 			title: 'Ice Core Data Visualiser',
 			description: 'Visualising CO2 trends from before the year 0 using ice core data.',
 			url: 'http://stefff.me/co2-icecore-visualisation/',
 			image: 'icecore.png',
-			github: 'https://github.com/stef-the/co2-icecore-visualisation',
-		},
+			github: 'stef-the/co2-icecore-visualisation'
+		}
 	];
+
+	const request = new XMLHttpRequest();
+
+							request.addEventListener("load", function(evt){
+								console.log(evt);
+							}, false);
+							
+							request.open('GET', 'a.html', true),
+							request.send();
 </script>
 
 <svelte:head>
@@ -177,6 +186,17 @@
 						<a href={item.url} target="_blank" rel="noreferrer"><b>{item.title}</b></a>
 					</h3>
 					<span class="cursor-default">{item.description}</span>
+					<span class="text-gray-500">
+						<a
+							class="underline"
+							href="https://github.com/{item.github}"
+							target="_blank"
+							rel="noreferrer"
+						>
+							{item.github}
+						</a>
+						• 
+					</span>
 				</div>
 			{/each}
 		</div>
