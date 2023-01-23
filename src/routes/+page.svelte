@@ -53,7 +53,7 @@
 			description: 'An incredibly quick image uploader.',
 			url: 'https://Ascella.host/',
 			image: 'ascella.png',
-			github: 'Tricked-dev/ascella'
+			github: 'ascellahost/web'
 		},
 		{
 			title: 'CIT Generator v3',
