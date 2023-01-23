@@ -83,7 +83,7 @@
 	 * @param {string} tag
 	 */
 	async function getData(tag) {
-		await fetch('https://github.com/' + tag, {
+		return await fetch('https://github.com/' + tag, {
 			mode: 'cors',
 			headers: { 'Access-Control-Allow-Origin': '*' }
 		})
@@ -92,16 +92,16 @@
 					let a, b;
 					a = data.split('relative-time')[1];
 					if (a !== undefined) {
-						b = a.split('>')[1].split('<')[0];
+						b = a.split('"')[1];
 					} else {
-						b = '';
+						b = 'None';
 					}
 					console.log(b);
 					return b;
 				});
 			})
 			.catch((err) => {
-				console.error(err);
+				console.warn(err);
 				return 'error';
 			});
 	}
@@ -213,10 +213,11 @@
 						>
 							{item.github}
 						</a>
-						• {getData(item.github).then((resp) => {
-							console.log(resp);
-							return resp;
-						})}
+						• {#await getData(item.github)}
+							...loading
+						{:then result}
+							{result}
+						{/await}
 					</span>
 				</div>
 			{/each}
