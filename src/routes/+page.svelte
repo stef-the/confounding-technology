@@ -1,6 +1,6 @@
 <script>
 	import { error } from '@sveltejs/kit';
-	import { each } from 'svelte/internal';
+	import { each, text } from 'svelte/internal';
 
 	let current0 = '';
 	let currenthover0 = '';
@@ -80,30 +80,12 @@
 	];
 
 	/**
-	 * @param {string} tag
+	 * @param {{ org: any; repo: any; }} params
 	 */
-	async function getData(tag) {
-		return await fetch('https://github.com/' + tag, {
-			mode: 'cors',
-			headers: { 'Access-Control-Allow-Origin': '*' }
-		})
-			.then((resp) => {
-				return resp.text().then((data) => {
-					let a, b;
-					a = data.split('relative-time')[1];
-					if (a !== undefined) {
-						b = a.split('"')[1];
-					} else {
-						b = 'None';
-					}
-					console.log(b);
-					return b;
-				});
-			})
-			.catch((err) => {
-				console.warn(err);
-				return 'error';
-			});
+	async function load(params) {
+		const res = await fetch(`https://github-latest-commit.stefff.workers.dev/?org=${params.org}&repo=${params.repo}`);
+		const data = await res.text();
+		return data;
 	}
 </script>
 
@@ -213,10 +195,10 @@
 						>
 							{item.github}
 						</a>
-						• {#await getData(item.github)}
-							...loading
-						{:then result}
-							{result}
+						• {#await load({org: item.github.split('/')[0], repo: item.github.split('/')[1]})}
+							loading...
+						{:then res} 
+							{res}
 						{/await}
 					</span>
 				</div>
