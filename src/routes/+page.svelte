@@ -1,6 +1,7 @@
 <script>
 	import { error } from '@sveltejs/kit';
 	import { each, text } from 'svelte/internal';
+	import Time from "svelte-time";
 
 	let current0 = '';
 	let currenthover0 = '';
@@ -198,7 +199,7 @@
 						• {#await load({org: item.github.split('/')[0], repo: item.github.split('/')[1]})}
 							loading...
 						{:then res} 
-							{res}
+							<Time relative timestamp={res} />
 						{/await}
 					</span>
 				</div>
