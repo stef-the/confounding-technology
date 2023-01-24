@@ -1,7 +1,7 @@
 <script>
 	import { error } from '@sveltejs/kit';
 	import { each, text } from 'svelte/internal';
-	import Time from "svelte-time";
+	import Time from 'svelte-time';
 
 	let current0 = '';
 	let currenthover0 = '';
@@ -84,10 +84,13 @@
 	 * @param {{ org: any; repo: any; }} params
 	 */
 	async function load(params) {
-		const res = await fetch(`https://github-latest-commit.stefff.workers.dev/?org=${params.org}&repo=${params.repo}`);
+		const res = await fetch(
+			`https://github-latest-commit.stefff.workers.dev/?org=${params.org}&repo=${params.repo}`
+		);
 		const data = await res.text();
 		return data;
 	}
+	
 </script>
 
 <svelte:head>
@@ -196,10 +199,12 @@
 						>
 							{item.github}
 						</a>
-						• {#await load({org: item.github.split('/')[0], repo: item.github.split('/')[1]})}
-							loading...
-						{:then res} 
-							<Time relative timestamp={res} />
+						{#await load({ org: item.github.split('/')[0], repo: item.github.split('/')[1] })}
+							• loading...
+						{:then res}
+							{#if res != 'None'}
+								• <Time relative timestamp={res} />
+							{/if}
 						{/await}
 					</span>
 				</div>
