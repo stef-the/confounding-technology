@@ -43,6 +43,13 @@
 
 	const portfolioitems = [
 		{
+			title: 'Ice Core Data Visualiser',
+			description: 'Visualising CO2 trends from before the year 0 using ice core data.',
+			url: 'http://stefff.me/co2-icecore-visualisation/',
+			image: 'icecore.png',
+			github: 'stef-the/co2-icecore-visualisation'
+		},
+		{
 			title: 'Vine (Service)',
 			description: 'A school project that went a little too far.',
 			url: 'https://vine.stefff.me/',
@@ -70,13 +77,6 @@
 			url: 'https://confounding.tech/',
 			image: 'confoundingtech.png',
 			github: 'stef-the/confounding-technology'
-		},
-		{
-			title: 'Ice Core Data Visualiser',
-			description: 'Visualising CO2 trends from before the year 0 using ice core data.',
-			url: 'http://stefff.me/co2-icecore-visualisation/',
-			image: 'icecore.png',
-			github: 'stef-the/co2-icecore-visualisation'
 		}
 	];
 
@@ -90,7 +90,6 @@
 		const data = await res.text();
 		return data;
 	}
-	
 </script>
 
 <svelte:head>
