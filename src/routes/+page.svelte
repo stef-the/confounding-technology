@@ -118,16 +118,16 @@
 				on:mouseenter={() => (whobg = 'bg-gray-100')}
 				on:mouseleave={() => (whobg = 'bg-zinc-800')}
 			>
-				<h3 class="text-2xl pb-4">
+				<h2 class="text-3xl pb-4">
 					Hello! My name is <b class="underline decoration-pink-500">Stefan</b>, and I like to
 					program.
-				</h3>
+				</h2>
 			</div>
 		</div>
 	</section>
 	<section class="p-8">
 		<h2 class="text-3xl cursor-default">
-			But what does <b class="underline decoration-pink-500">Confounding</b> mean?
+			But what does <b class="underline decoration-indigo-500">Confounding</b> mean?
 		</h2>
 		{#each definitions as definition}
 			<div class="flex flex-row">
@@ -173,7 +173,7 @@
 	</section>
 	<section class="p-8">
 		<h2 class="text-3xl cursor-default">
-			Here's my <b class="underline decoration-indigo-500">Portfolio</b>
+			Here's my <b class="underline decoration-pink-500">Portfolio</b>
 		</h2>
 		<div class="flex flex-wrap">
 			{#each portfolioitems as item}
