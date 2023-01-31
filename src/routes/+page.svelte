@@ -5,9 +5,6 @@
 
 	let current0 = '';
 	let currenthover0 = '';
-
-	let whobg = 'bg-zinc-800';
-
 	const space = ' ';
 
 	const pallette = ['sky-500', 'pink-500', 'indigo-500'];
@@ -112,12 +109,7 @@
 <div class="content">
 	<section class="p-8">
 		<div class="flex flex-row">
-			<div class="{whobg} w-2 h-10 transition-all rounded" id="who" />
-			<div
-				class="pl-4 cursor-pointer"
-				on:mouseenter={() => (whobg = 'bg-gray-100')}
-				on:mouseleave={() => (whobg = 'bg-zinc-800')}
-			>
+			<div class="pl-4 cursor-pointer">
 				<h2 class="text-3xl pb-4">
 					Hello! My name is <b class="underline decoration-pink-500">Stefan</b>, and I like to
 					program.
