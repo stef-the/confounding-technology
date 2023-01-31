@@ -109,12 +109,10 @@
 <div class="content">
 	<section class="p-8">
 		<div class="flex flex-row">
-			<div class="pl-4 cursor-pointer">
-				<h2 class="text-3xl pb-4">
-					Hello! My name is <b class="underline decoration-pink-500">Stefan</b>, and I like to
-					program.
-				</h2>
-			</div>
+			<h2 class="text-3xl pb-4">
+				Hello! My name is <b class="underline decoration-pink-500">Stefan</b>, and I like to
+				program.
+			</h2>
 		</div>
 	</section>
 	<section class="p-8">
