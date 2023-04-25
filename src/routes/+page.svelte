@@ -7,7 +7,7 @@
 	let currenthover0 = '';
 	const space = ' ';
 
-	const pallette = ['sky-500', 'pink-500', 'indigo-500'];
+	const colours = ['sky-500', 'pink-500', 'indigo-500'];
 
 	const definitions = [
 		[
@@ -172,8 +172,8 @@
 				>
 					<img class="mb-3 rounded" src="img/{item.image}" alt={item.image} />
 					<h3
-						class="sm:text-2xl underline decoration-{pallette[
-							Math.floor(Math.random() * pallette.length)
+						class="sm:text-2xl underline decoration-{colours[
+							Math.floor(Math.random() * colours.length)
 						]}"
 					>
 						<a href={item.url} target="_blank" rel="noreferrer"><b>{item.title}</b></a>
