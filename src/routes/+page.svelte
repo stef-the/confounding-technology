@@ -48,14 +48,14 @@
 		},
 		{
 			title: 'Vine (Service)',
-			description: 'A school project that went a little too far.',
+			description: 'A school project that scrapes Wikipedia and then reformats it to be more interesting to read.',
 			url: 'https://vine.stefff.me/',
 			image: 'vine.png',
 			github: 'stef-the/vine-school'
 		},
 		{
 			title: 'Ascella.host',
-			description: 'An incredibly quick image uploader.',
+			description: 'The marketing website for an incredibly quick image uploader built using Rust.',
 			url: 'https://Ascella.host/',
 			image: 'ascella.png',
 			github: 'ascellahost/web'
@@ -63,7 +63,7 @@
 		{
 			title: 'CIT Generator v3',
 			description:
-				"The third generation of a 1.8.9 Optifine CIT generation tool for Hypixel Skyblock, using Moulberry's item repository.",
+				"A 1.8.9 Optifine CIT generation tool designed for Hypixel Skyblock.",
 			url: 'https://cit-generator-v3.vercel.app/',
 			image: 'citgenv3.png',
 			github: 'stef-the/CIT-Generator-v3'
