@@ -111,14 +111,12 @@
 			</p>
 		</h1>
 	</b>
-	<a href="#page" class="absolute top-3/4 left-1/2 h-20 w-20"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" style="fill:#F3F4F6" data-name="Down"/></svg></a>
+	<a href="#page" class="absolute top-[85%] left-1/2 h-20 w-20 animate-arrow-onload"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" style="fill:#F3F4F6" data-name="Down"/></svg></a>
 </div>
 <div class="content" id="page">
 	<section class="p-8">
 		<div class="flex flex-row">
 			<h2 class="text-3xl pb-4">
-				Hello! My name is <b class="underline decoration-pink-500">Stefan</b>, and I like to
-				program.
 				Hello! My name is <b
 					class="bg-gradient-to-br from-purple-500 to-pink-500 via-pink-500 rounded py-0.5 px-1 gradient-xy"
 					>Stefan</b
@@ -129,15 +127,15 @@
 	<section class="p-8">
 		<!-- MODIFY HERE -->
 		<h2 class="text-3xl cursor-default">
-			But what does <b class="underline decoration-indigo-500">Confounding</b> mean?
+			But what does <b class="bg-gradient-to-br from-purple-500 to-indigo-500 rounded py-0.5 px-1 gradient-xy">Confounding</b> mean?
 		</h2>
 		<!-- MODIFY HERE -->
 		{#each definitions as definition}
 			<div class="flex flex-row">
 				<div
 					class="transition-all rounded p-3 pt-0 pl-4 m-3 mt-6
-                        {current0 === `dropdown-${definition[0][1]}` ? 'bg-gradient-to-br from-indigo-500 to-sky-500 rounded p-3 pt-1 gradient-x' : ''}
-						{currenthover0 === `dropdown-${definition[0][1]}` ? 'bg-gradient-to-br from-indigo-500 to-sky-500 rounded p-3 pt-1 gradient-x' : 'transparent'}"
+                        {current0 === `dropdown-${definition[0][1]}` ? 'bg-gradient-to-r from-indigo-500 from-25% to-sky-500 to-100% rounded p-3 pt-1' : ''}
+						{currenthover0 === `dropdown-${definition[0][1]}` ? '' : ''}"
 				>
 					<button
 						class="dropdown-button"
@@ -154,10 +152,8 @@
 						on:mouseleave={() => (currenthover0 = ``)}
 						><br />
 						<h3 class="leading-4 text-2xl pb-1">
-							<!-- MODIFY HERE -->
-							{definition[0][0]}{space}<b>{definition[0][1]}</b
+							{definition[0][0]}{space}<b class="underline decoration-sky-500">{definition[0][1]}</b
 							>
-							<!-- MODIFY HERE -->
 						</h3>
 					</button>
 					<ul
@@ -176,11 +172,14 @@
 		{/each}
 	</section>
 	<section class="p-8">
-		<!-- MODIFY HERE -->
+		<!-- 
+		
+			Portfolio elements: Lots of little websites
+		
+		-->
 		<h2 class="text-3xl cursor-default">
-			Here's my <b class="underline decoration-pink-500">Portfolio</b>
+			Here's my <b class="bg-gradient-to-br from-sky-500 to-indigo-500 rounded py-0.5 px-1 gradient-xy">Portfolio</b>
 		</h2>
-		<!-- MODIFY HERE -->
 		<div class="flex flex-wrap">
 			{#each portfolioitems as item}
 				<div
