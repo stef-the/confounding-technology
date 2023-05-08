@@ -5,6 +5,11 @@
 
 	let current0 = '';
 	let currenthover0 = '';
+<<<<<<< Updated upstream
+=======
+
+	let whobg = 'transparent';
+
 	const space = ' ';
 
 	const colours = ['sky-500', 'pink-500', 'indigo-500'];
@@ -89,6 +94,7 @@
 	}
 </script>
 
+
 <svelte:head>
 	<title>Confounding Technologies</title>
 	<meta name="author" content="stef#6470" />
@@ -98,35 +104,49 @@
 	/>
 </svelte:head>
 
+
 <div class="bg-gradient-to-b from-gray-900 to-zinc-900 h-screen grid place-content-center">
 	<b class="cursor-default">
-		<h1 class="text-4xl underline-offset-2 p-8">
-			Welcome to
-			<p class="underline decoration-sky-500">Confounding Technologies</p>
+		<h1 class="text-4xl p-8">
+			<p class="pl-3 pb-2">Welcome to</p>
+			<p
+				class="bg-gradient-to-br from-sky-500 to-pink-500 via-purple-500 rounded p-3 pt-1 gradient-xy"
+			>
+				Confounding Technologies
+			</p>
 		</h1>
 	</b>
+	<a href="#page" class="absolute top-3/4 left-1/2 h-20 w-20"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" style="fill:#F3F4F6" data-name="Down"/></svg></a>
 </div>
-<div class="content">
+<div class="content" id="page">
 	<section class="p-8">
 		<div class="flex flex-row">
 			<h2 class="text-3xl pb-4">
+<<<<<<< Updated upstream
 				Hello! My name is <b class="underline decoration-pink-500">Stefan</b>, and I like to
 				program.
+=======
+				Hello! My name is <b
+					class="bg-gradient-to-br from-purple-500 to-pink-500 via-pink-500 rounded py-0.5 px-1 gradient-xy"
+					>Stefan</b
+				> and I like to program.
+>>>>>>> Stashed changes
 			</h2>
 		</div>
 	</section>
 	<section class="p-8">
+		<!-- MODIFY HERE -->
 		<h2 class="text-3xl cursor-default">
 			But what does <b class="underline decoration-indigo-500">Confounding</b> mean?
 		</h2>
+		<!-- MODIFY HERE -->
 		{#each definitions as definition}
 			<div class="flex flex-row">
 				<div
-					class=" h-10 mt-4 w-2 transition-all rounded
-                        {current0 === `dropdown-${definition[0][1]}` ? 'bg-sky-500' : ''}
-						{currenthover0 === `dropdown-${definition[0][1]}` ? 'bg-gray-100' : 'bg-zinc-800'}"
-				/>
-				<div class="pl-4">
+					class="transition-all rounded p-3 pt-0 pl-4 m-3 mt-6
+                        {current0 === `dropdown-${definition[0][1]}` ? 'bg-gradient-to-br from-indigo-500 to-sky-500 rounded p-3 pt-1 gradient-x' : ''}
+						{currenthover0 === `dropdown-${definition[0][1]}` ? 'bg-gradient-to-br from-indigo-500 to-sky-500 rounded p-3 pt-1 gradient-x' : 'transparent'}"
+				>
 					<button
 						class="dropdown-button"
 						type="button"
@@ -141,9 +161,11 @@
 						on:mouseenter={() => (currenthover0 = `dropdown-${definition[0][1]}`)}
 						on:mouseleave={() => (currenthover0 = ``)}
 						><br />
-						<h3 class="leading-4 text-2xl pb-4">
-							{definition[0][0]}{space}<b class="underline decoration-sky-500">{definition[0][1]}</b
+						<h3 class="leading-4 text-2xl pb-1">
+							<!-- MODIFY HERE -->
+							{definition[0][0]}{space}<b>{definition[0][1]}</b
 							>
+							<!-- MODIFY HERE -->
 						</h3>
 					</button>
 					<ul
@@ -162,9 +184,11 @@
 		{/each}
 	</section>
 	<section class="p-8">
+		<!-- MODIFY HERE -->
 		<h2 class="text-3xl cursor-default">
 			Here's my <b class="underline decoration-pink-500">Portfolio</b>
 		</h2>
+		<!-- MODIFY HERE -->
 		<div class="flex flex-wrap">
 			{#each portfolioitems as item}
 				<div
@@ -188,13 +212,13 @@
 						>
 							{item.github}
 						</a>
-						{#await load({ org: item.github.split('/')[0], repo: item.github.split('/')[1] })}
+						<!--{#await load({ org: item.github.split('/')[0], repo: item.github.split('/')[1] })}
 							• loading...
 						{:then res}
 							{#if res != 'None'}
 								• <Time relative timestamp={res} />
 							{/if}
-						{/await}
+						{/await}-->
 					</span>
 				</div>
 			{/each}
