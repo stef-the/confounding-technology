@@ -5,11 +5,6 @@
 
 	let current0 = '';
 	let currenthover0 = '';
-<<<<<<< Updated upstream
-=======
-
-	let whobg = 'transparent';
-
 	const space = ' ';
 
 	const colours = ['sky-500', 'pink-500', 'indigo-500'];
@@ -122,15 +117,12 @@
 	<section class="p-8">
 		<div class="flex flex-row">
 			<h2 class="text-3xl pb-4">
-<<<<<<< Updated upstream
 				Hello! My name is <b class="underline decoration-pink-500">Stefan</b>, and I like to
 				program.
-=======
 				Hello! My name is <b
 					class="bg-gradient-to-br from-purple-500 to-pink-500 via-pink-500 rounded py-0.5 px-1 gradient-xy"
 					>Stefan</b
 				> and I like to program.
->>>>>>> Stashed changes
 			</h2>
 		</div>
 	</section>
