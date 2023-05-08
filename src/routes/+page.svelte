@@ -74,7 +74,14 @@
 			url: 'https://confounding.tech/',
 			image: 'confoundingtech.png',
 			github: 'stef-the/confounding-technology'
-		}
+		},
+		{
+			title: 'Fulham Library Coding Club',
+			description: "Teaching basic computer scicence skills to children aged 7-14",
+			url: 'https://bit.ly/code-camp-fulham',
+			image: 'codeclub.png',
+			github: false
+		},
 	];
 
 	/**
@@ -194,14 +201,14 @@
 						<a href={item.url} target="_blank" rel="noreferrer"><b>{item.title}</b></a>
 					</h3>
 					<span class="cursor-default">{item.description}</span>
-					<span class="text-gray-500">
+					{@html item.github == false ? '' : `<span class="text-gray-500">
 						<a
 							class="underline"
-							href="https://github.com/{item.github}"
+							href="https://github.com/${item.github}"
 							target="_blank"
 							rel="noreferrer"
 						>
-							{item.github}
+							${item.github}
 						</a>
 						<!--{#await load({ org: item.github.split('/')[0], repo: item.github.split('/')[1] })}
 							• loading...
@@ -210,7 +217,7 @@
 								• <Time relative timestamp={res} />
 							{/if}
 						{/await}-->
-					</span>
+					</span>`}
 				</div>
 			{/each}
 		</div>
