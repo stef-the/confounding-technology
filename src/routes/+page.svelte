@@ -40,30 +40,30 @@
 
 	const portfolioitems = [
 		{
-			title: 'Ice Core Data Visualiser',
-			description: 'Visualising CO2 trends from before the year 0 using ice core data.',
+			title: 'Ice Core Data Charts',
+			description: 'Visualising and interacting with CO₂ trends from before the year 0 using ice core data.',
 			url: 'http://stefff.me/co2-icecore-visualisation/',
 			image: 'icecore.png',
 			github: 'stef-the/co2-icecore-visualisation'
 		},
 		{
 			title: 'Vine (Service)',
-			description: 'A school project that scrapes Wikipedia and then reformats it to be more interesting to read.',
+			description:
+				'A school project that scrapes Wikipedia and then reformats it to be more interesting to read.',
 			url: 'https://vine.stefff.me/',
 			image: 'vine.png',
 			github: 'stef-the/vine-school'
 		},
 		{
 			title: 'Ascella.host',
-			description: 'The marketing website for an incredibly quick image uploader built using Rust.',
+			description: 'A marketing website built for an incredibly quick image uploader that utilizes Rust.',
 			url: 'https://Ascella.host/',
 			image: 'ascella.png',
 			github: 'ascellahost/web'
 		},
 		{
 			title: 'CIT Generator v3',
-			description:
-				"A 1.8.9 Optifine CIT generation tool designed for Hypixel Skyblock.",
+			description: 'A 1.8.9 Optifine CIT generation tool designed to automate Hypixel Skyblock texture pack creation.',
 			url: 'https://cit-generator-v3.vercel.app/',
 			image: 'citgenv3.png',
 			github: 'stef-the/CIT-Generator-v3'
@@ -77,11 +77,11 @@
 		},
 		{
 			title: 'Fulham Library Coding Club',
-			description: "Teaching basic computer scicence skills to children aged 7-14",
+			description: 'Teaching basic computer scicence skills to children aged 7-14 using Blocky, Scratch, Python and Minecraft.',
 			url: 'https://bit.ly/code-camp-fulham',
 			image: 'codeclub.png',
 			github: false
-		},
+		}
 	];
 
 	/**
@@ -96,7 +96,6 @@
 	}
 </script>
 
-
 <svelte:head>
 	<title>Confounding Technologies</title>
 	<meta name="author" content="stef#6470" />
@@ -105,7 +104,6 @@
 		content="The Confounding Technologies homepage. Confounding is a synonym for Perplexing or Bewildering."
 	/>
 </svelte:head>
-
 
 <div class="bg-gradient-to-b from-gray-900 to-zinc-900 h-screen grid place-content-center">
 	<b class="cursor-default">
@@ -118,7 +116,15 @@
 			</p>
 		</h1>
 	</b>
-	<a href="#page" class="absolute top-[85%] left-1/2 h-20 w-20 animate-arrow-onload"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" style="fill:#F3F4F6" data-name="Down"/></svg></a>
+	<a href="#page" class="absolute top-[85%] left-1/2 h-20 w-20 animate-arrow-onload"
+		><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+			><path
+				d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z"
+				style="fill:#F3F4F6"
+				data-name="Down"
+			/></svg
+		></a
+	>
 </div>
 <div class="content" id="page">
 	<section class="p-8">
@@ -127,21 +133,24 @@
 				Hello! My name is <b
 					class="bg-gradient-to-br from-purple-500 to-pink-500 via-pink-500 rounded py-0.5 px-1 gradient-xy"
 					>Stefan</b
-				> and I like to program.
+				> and I am a full-stack developer.
 			</h2>
 		</div>
 	</section>
-	<section class="p-8">
-		<!-- MODIFY HERE -->
+	<section class="p-8 pt-0">
 		<h2 class="text-3xl cursor-default">
-			But what does <b class="bg-gradient-to-br from-purple-500 to-indigo-500 rounded py-0.5 px-1 gradient-xy">Confounding</b> mean?
+			I solve confounding problems. What does <b
+				class="bg-gradient-to-br from-purple-500 to-indigo-500 rounded py-0.5 px-1 gradient-xy"
+				>Confounding</b
+			> mean?
 		</h2>
-		<!-- MODIFY HERE -->
 		{#each definitions as definition}
 			<div class="flex flex-row">
 				<div
-					class="transition-all rounded p-3 pt-0 pl-4 m-3 mt-6
-                        {current0 === `dropdown-${definition[0][1]}` ? 'bg-gradient-to-r from-indigo-500 from-25% to-sky-500 to-100% rounded p-3 pt-1' : ''}
+					class="transition-all rounded p-3 pt-0 pb-0 pl-4 m-3 mt-1 mb-0
+                        {current0 === `dropdown-${definition[0][1]}`
+						? 'bg-gradient-to-r from-indigo-500 from-25% to-sky-500 to-100% rounded p-3 pt-1'
+						: ''}
 						{currenthover0 === `dropdown-${definition[0][1]}` ? '' : ''}"
 				>
 					<button
@@ -158,7 +167,7 @@
 						on:mouseenter={() => (currenthover0 = `dropdown-${definition[0][1]}`)}
 						on:mouseleave={() => (currenthover0 = ``)}
 						><br />
-						<h3 class="leading-4 text-2xl pb-1">
+						<h3 class="leading-4 text-2xl">
 							{definition[0][0]}{space}<b class="underline decoration-sky-500">{definition[0][1]}</b
 							>
 						</h3>
@@ -178,14 +187,17 @@
 			</div>
 		{/each}
 	</section>
-	<section class="p-8">
+	<section class="p-8 pt-0">
 		<!-- 
 		
 			Portfolio elements: Lots of little websites
 		
 		-->
 		<h2 class="text-3xl cursor-default">
-			Here's my <b class="bg-gradient-to-br from-sky-500 to-indigo-500 rounded py-0.5 px-1 gradient-xy">Portfolio</b>
+			Here are some of my <b
+				class="bg-gradient-to-br from-sky-500 to-indigo-500 rounded py-0.5 px-1 gradient-xy"
+				>Projects</b
+			>:
 		</h2>
 		<div class="flex flex-wrap">
 			{#each portfolioitems as item}
@@ -201,7 +213,9 @@
 						<a href={item.url} target="_blank" rel="noreferrer"><b>{item.title}</b></a>
 					</h3>
 					<span class="cursor-default">{item.description}</span>
-					{@html item.github == false ? '' : `<span class="text-gray-500">
+					{@html item.github == false
+						? ''
+						: `<span class="text-gray-500">
 						<a
 							class="underline"
 							href="https://github.com/${item.github}"
