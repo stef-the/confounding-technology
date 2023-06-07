@@ -1,3 +1,12 @@
+<!--
+
+WARNING!
+This page isn't in use. Don't expect it to work,
+and don't ask anyone for support unless explicitly
+stating that they will provide it.
+
+-->
+
 <script>
 </script>
 
