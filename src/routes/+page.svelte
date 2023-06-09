@@ -3,8 +3,8 @@
 	import { each, text } from 'svelte/internal';
 	import Time from 'svelte-time';
 
-	let current0 = '';
-	let currenthover0 = '';
+	let current = '';
+	let currentHover = '';
 	const space = ' ';
 
 	const colours = ['sky-500', 'pink-500', 'indigo-500'];
@@ -41,7 +41,8 @@
 	const portfolioitems = [
 		{
 			title: 'Ice Core Data Charts',
-			description: 'Visualising and interacting with CO₂ trends from before the year 0 using ice core data.',
+			description:
+				'Visualising and interacting with CO₂ trends from before the year 0 using ice core data.',
 			url: 'http://stefff.me/co2-icecore-visualisation/',
 			image: 'icecore.png',
 			github: 'stef-the/co2-icecore-visualisation'
@@ -56,14 +57,16 @@
 		},
 		{
 			title: 'Ascella.host',
-			description: 'A marketing website built for an incredibly quick image uploader that utilizes Rust.',
+			description:
+				'A marketing website built for an incredibly quick image uploader that utilizes Rust.',
 			url: 'https://Ascella.host/',
 			image: 'ascella.png',
 			github: 'ascellahost/web'
 		},
 		{
 			title: 'CIT Generator v3',
-			description: 'A 1.8.9 Optifine CIT generation tool designed to automate Hypixel Skyblock texture pack creation.',
+			description:
+				'A 1.8.9 Optifine CIT generation tool designed to automate Hypixel Skyblock texture pack creation.',
 			url: 'https://cit-generator-v3.vercel.app/',
 			image: 'citgenv3.png',
 			github: 'stef-the/CIT-Generator-v3'
@@ -77,7 +80,8 @@
 		},
 		{
 			title: 'Fulham Library Coding Club',
-			description: 'Teaching basic computer scicence skills to children aged 7-14 using Blocky, Scratch, Python and Minecraft.',
+			description:
+				'Teaching basic computer scicence skills to children aged 7-14 using Blocky, Scratch, Python and Minecraft.',
 			url: 'https://bit.ly/code-camp-fulham',
 			image: 'codeclub.png',
 			github: false
@@ -140,33 +144,32 @@
 	<section class="p-8 pt-0">
 		<h2 class="text-3xl cursor-default">
 			I solve confounding problems. What does <b
-				class="bg-gradient-to-br from-purple-500 to-indigo-500 rounded py-0.5 px-1 gradient-xy"
-				>Confounding</b
-			> mean?
+				class="bg-gradient-to-br from-purple-500 to-indigo-500 
+					rounded 
+					py-0.5 px-1 gradient-xy">Confounding</b
+			>
+			mean? <!-- Gradient border WIP: "before:content-none before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:z-0"-->
 		</h2>
 		{#each definitions as definition}
 			<div class="flex flex-row">
 				<div
-					class="transition-all rounded p-3 pt-0 pb-0 pl-4 m-3 mt-1 mb-0
-                        {current0 === `dropdown-${definition[0][1]}`
-						? 'bg-gradient-to-r from-indigo-500 from-25% to-sky-500 to-100% rounded p-3 pt-1'
+					class="transition-all rounded p-4 pb-3 m-3 mt-2 mb-0
+					border-2 border-transparent hover:border-sky-500
+                        {current === `dropdown-${definition[0][1]}`
+						? 'bg-gradient-to-r from-indigo-500 from-25% to-sky-500 to-100% rounded p-3'
 						: ''}
-						{currenthover0 === `dropdown-${definition[0][1]}` ? '' : ''}"
+						{currentHover === `dropdown-${definition[0][1]}` ? '' : ''}"
+					on:click={() => {
+						if (current === '') {
+							current = `dropdown-${definition[0][1]}`;
+						} else {
+							current = '';
+						}
+					}}
+					on:mouseenter={() => (currentHover = `dropdown-${definition[0][1]}`)}
+					on:mouseleave={() => (currentHover = ``)}
 				>
-					<button
-						class="dropdown-button"
-						type="button"
-						id="dropdownMenuButton"
-						on:click={() => {
-							if (current0 === '') {
-								current0 = `dropdown-${definition[0][1]}`;
-							} else {
-								current0 = '';
-							}
-						}}
-						on:mouseenter={() => (currenthover0 = `dropdown-${definition[0][1]}`)}
-						on:mouseleave={() => (currenthover0 = ``)}
-						><br />
+					<button class="dropdown-button" type="button" id="dropdownMenuButton">
 						<h3 class="leading-4 text-2xl">
 							{definition[0][0]}{space}<b class="underline decoration-sky-500">{definition[0][1]}</b
 							>
@@ -174,7 +177,7 @@
 					</button>
 					<ul
 						id="dropdown-{definition[0][1]}"
-						class="pl-4 dropdown-menu {current0 === `dropdown-${definition[0][1]}` ? '' : 'hidden'}"
+						class="pl-4 dropdown-menu {current === `dropdown-${definition[0][1]}` ? '' : 'hidden'}"
 					>
 						{#each definition.slice(1) as cat}
 							<li>
