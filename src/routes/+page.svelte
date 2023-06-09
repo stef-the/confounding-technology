@@ -114,7 +114,7 @@
 		<h1 class="text-4xl p-8">
 			<p class="pl-3 pb-2">Welcome to</p>
 			<p
-				class="bg-gradient-to-br from-sky-500 to-pink-500 via-purple-500 rounded p-3 pt-1 gradient-xy"
+				class="bg-gradient-to-br from-sky-500 to-pink-500 via-purple-500 rounded p-3 gradient-xy"
 			>
 				Confounding Technologies
 			</p>
